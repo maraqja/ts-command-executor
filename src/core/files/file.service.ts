@@ -13,9 +13,9 @@ export class FileService {
 
     public getFilePath(path: string, name: string, ext: string): string {
         if (!isAbsolute(path)) {
-            path = join(`${__dirname}/${path}`);
+            path = join(__dirname, path);
         }
-        return join(`${dirname(path)}/${name}.${ext}`);
+        return join(dirname(path), `${name}.${ext}`);
     }
 
     async deleteFileIfExists(path: string): Promise<void> {
@@ -24,3 +24,6 @@ export class FileService {
         }
     }
 }
+
+// E:\DISTR\PORTFOLIO\Video converter (Typescript with patterns)\dist\core\files\asserts\1.mp4
+// E:\DISTR\PORTFOLIO\Video converter (Typescript with patterns)\asserts\1.mp4
